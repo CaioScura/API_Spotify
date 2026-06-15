@@ -21,7 +21,7 @@ class SpotifyAuthController extends Controller
             'client_id' => $clientId,
             'response_type' => 'code',
             'redirect_uri' => $redirectUri,
-            'scope' => 'user-read-email user-top-read',
+            'scope' => 'user-read-email user-read-private user-top-read user-library-read',
         ]);
 
         return redirect('https://accounts.spotify.com/authorize?' . $query);
@@ -62,11 +62,36 @@ class SpotifyAuthController extends Controller
             return response('Resposta inesperada do Spotify: ' . json_encode($data), 500);
         }
 
-        // salva token na sessão
+        // busca perfil do usuário
+        $profileResponse = Http::withToken($data['access_token'])
+            ->get('https://api.spotify.com/v1/me');
+
+        if (!$profileResponse->successful()) {
+            return response('Erro ao buscar perfil do Spotify: ' . $profileResponse->body(), 500);
+        }
+
+        $profile = $profileResponse->json();
+
+        $image = null;
+        if (!empty($profile['images']) && is_array($profile['images'])) {
+            $image = $profile['images'][0]['url'] ?? null;
+        }
+
         session([
-            'spotify_token' => $data['access_token']
+            'spotify_token' => $data['access_token'],
+            'spotify_user'  => [
+                'name'  => $profile['display_name'] ?? ($profile['id'] ?? 'Usuário'),
+                'image' => $image,
+                'id'    => $profile['id'] ?? null,
+            ],
         ]);
 
+        return redirect('/dashboard');
+    }
+
+    public function logout()
+    {
+        session()->flush();
         return redirect('/');
     }
 }

@@ -1,0 +1,217 @@
+:root {
+            --sp-green:   #1DB954;
+            --bg-dark:    #121212;
+            --bg-card:    #1E1E1E;
+            --bg-hover:   #2A2A2A;
+            --text-main:  #FFFFFF;
+            --text-muted: #B3B3B3;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            min-height: 100vh;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        /* ── Navbar ── */
+        .sp-navbar {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, transparent 100%);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .sp-brand {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--sp-green);
+            text-decoration: none;
+        }
+
+        .profile-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--sp-green);
+        }
+
+        .profile-initial {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--sp-green);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #000;
+            flex-shrink: 0;
+        }
+
+        .profile-name {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .btn-logout {
+            background: transparent;
+            border: 1px solid #555;
+            color: var(--text-muted);
+            border-radius: 50px;
+            padding: 0.3rem 1rem;
+            font-size: 0.82rem;
+            transition: border-color 0.2s, color 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-logout:hover {
+            border-color: #fff;
+            color: #fff;
+        }
+
+        /* ── Main content ── */
+        .main-content {
+            padding: 2rem 2rem 4rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.9rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .section-sub {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        /* ── Mood cards ── */
+        .mood-card {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 2rem 1rem 1.5rem;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
+            border: 2px solid transparent;
+            text-align: center;
+            user-select: none;
+            height: 100%;
+        }
+
+        .mood-card:hover {
+            transform: translateY(-5px);
+            background: var(--bg-hover);
+            box-shadow: 0 10px 28px rgba(0,0,0,0.5);
+        }
+
+        .mood-card.active {
+            border-color: var(--sp-green);
+            box-shadow: 0 0 20px rgba(29,185,84,0.35);
+        }
+
+        .mood-card.loading {
+            opacity: 0.55;
+            cursor: wait;
+            pointer-events: none;
+        }
+
+        .mood-emoji {
+            font-size: 2.6rem;
+            display: block;
+            margin-bottom: 0.75rem;
+        }
+
+        .mood-name {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .mood-desc {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+
+        /* top accent bars per mood */
+        .mood-happy    { border-top: 3px solid #FFD700; }
+        .mood-sad      { border-top: 3px solid #6B8EAD; }
+        .mood-focus    { border-top: 3px solid #7B68EE; }
+        .mood-relaxed  { border-top: 3px solid #5EC4A0; }
+        .mood-night    { border-top: 3px solid #8A9BC7; }
+        .mood-motivated{ border-top: 3px solid #FF6B35; }
+
+        /* ── Now Playing card ── */
+        #now-playing {
+            display: none;
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 1.75rem;
+            margin-top: 2.5rem;
+            border: 1px solid #2c2c2c;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        .now-playing-label {
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--sp-green);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .btn-sp {
+            background: var(--sp-green);
+            color: #000;
+            font-weight: 700;
+            border: none;
+            border-radius: 50px;
+            padding: 0.45rem 1.3rem;
+            font-size: 0.83rem;
+            transition: background 0.15s, transform 0.1s;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .btn-sp:hover {
+            background: #1ed760;
+            color: #000;
+            transform: scale(1.04);
+        }
+
+        #loading-track {
+            display: none;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            padding: 0.5rem 0;
+        }
+
+        #error-track {
+            display: none;
+            color: #e05252;
+            font-size: 0.88rem;
+        }
+
+        #track-info { display: none; }
+
+        #spotify-embed {
+            border-radius: 12px;
+            min-height: 152px;
+        }
