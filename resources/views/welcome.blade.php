@@ -30,6 +30,13 @@
         <link rel="icon" href="{{ asset('assets/images/spotify_dark.svg') }}" type="image/svg+xml">
     </head>
     <body class="bg-[#FDFDFC] dark:bg-[#0a0a0a] text-[#1b1b18] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
+        
+        <a href="#" class="logoNome sp-brand mb-3">
+            <img src="/assets/images/logo_spotify.png" alt="Logo" style="width: 48px; height: 48px;" class="logo me-2">
+            {{-- <i class="bi bi-music-note-beamed me-1"></i>Mood Player --}}
+            Mood Player Caiote
+        </a>
+        
         <a href="/login" class="btn btn-primary btn-entrar-spotify">
             Entrar com Spotify
             <i class="bi bi-spotify ms-2"></i>

@@ -16,7 +16,7 @@
 </head>
 <body>
 
-    <!-- ── Navbar ── -->
+    <!-- navbar -->
     <nav class="sp-navbar d-flex align-items-center justify-content-between">
         <a href="/dashboard" class="sp-brand">
             <img src="/assets/images/logo_spotify.png" alt="Logo" style="width: 32px; height: 32px;" class="logo me-2">
@@ -41,14 +41,14 @@
         </div>
     </nav>
 
-    <!-- ── Main ── -->
+    <!-- conteudo princiapl -->
     <div class="main-content">
         <div>
             <h1 class="section-title">Como você está se sentindo?</h1>
             <div class="section-sub">Selecione um mood e tocaremos uma música das suas curtidas que combina.</div>
         </div>
 
-        <!-- Mood grid -->
+        <!-- grid dos MOODS -->
         <div class="row g-3">
             @php
                 $moods = [
@@ -59,12 +59,23 @@
                     ['slug' => 'night',      'emoji' => '🌙', 'name' => 'Noitezinha'],
                     ['slug' => 'loving',  'emoji' => '❤️', 'name' => 'Apaixonadinho'],
                 ];
+                $moodImages = [
+                    'happy'   => 'alegria.png',
+                    'sad'     => 'depressao.png',
+                    'focus'   => 'risos.png',
+                    'relaxed' => 'sussa.png',
+                    'night'   => 'noite-assustador.png',
+                    'loving'  => 'apaixonado.png',
+                ];
             @endphp
 
             @foreach($moods as $mood)
             <div class="col-6 col-md-4 col-lg-4">
                 <div class="mood-card mood-{{ $mood['slug'] }}"
                      onclick="selectMood(this, '{{ $mood['slug'] }}')">
+                    <img class="mood-bg-img"
+                         src="/assets/images/fotos/{{ $moodImages[$mood['slug']] }}"
+                         alt="" draggable="false">
                     <span class="mood-emoji">{{ $mood['emoji'] }}</span>
                     <div class="mood-name">{{ $mood['name'] }}</div>
                 </div>
@@ -72,7 +83,7 @@
             @endforeach
         </div>
 
-        <!-- Now Playing -->
+        <!-- tocando agora -->
         <div id="now-playing">
             {{-- <div class="now-playing-label"><i class="bi bi-vinyl me-1"></i>Tocando agora</div> --}}
 
@@ -112,6 +123,14 @@
             }
             card.classList.add('active', 'loading');
             activeCard = card;
+
+            const img = card.querySelector('.mood-bg-img');
+            if (img) {
+                img.classList.remove('show');
+                void img.offsetWidth;
+                img.classList.add('show');
+                img.addEventListener('animationend', () => img.classList.remove('show'), { once: true });
+            }
 
             // reset iframe para parar música anterior
             const embed = document.getElementById('spotify-embed');

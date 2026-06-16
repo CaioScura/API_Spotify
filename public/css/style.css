@@ -17,7 +17,13 @@
             font-family: 'DM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
 
-        /* ── Navbar ── */
+        .logoNome {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 48px !important;
+        }
+        /*navbar*/
         .sp-navbar {
             /* background: linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, transparent 100%); */
             background-color: #121212;
@@ -113,7 +119,7 @@
             color: #fff;
         }
 
-        /* ── Main content ── */
+        /* conteudo principal */
         .main-content {
             padding: 2rem 2rem 4rem;
             margin: 0 auto;
@@ -131,7 +137,7 @@
             font-size: 0.95rem;
         }
 
-        /* ── Mood cards ── */
+        /* card MOODS */
         .mood-card {
             background: var(--bg-card);
             border-radius: 12px;
@@ -142,6 +148,31 @@
             text-align: center;
             user-select: none;
             height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mood-bg-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes moodImgReveal {
+            0%   { opacity: 0; }
+            20%  { opacity: 0.30; }
+            65%  { opacity: 0.30; }
+            100% { opacity: 0; }
+        }
+
+        .mood-bg-img.show {
+            animation: moodImgReveal 5s ease forwards;
         }
 
         .mood-card:hover {
@@ -166,12 +197,16 @@
             font-size: 2.6rem;
             display: block;
             margin-bottom: 0.75rem;
+            position: relative;
+            z-index: 1;
         }
 
         .mood-name {
             font-size: 1rem;
             font-weight: 700;
             margin-bottom: 0.25rem;
+            position: relative;
+            z-index: 1;
         }
 
         .mood-desc {
@@ -180,7 +215,8 @@
             line-height: 1.4;
         }
 
-        /* top accent bars per mood */
+
+        /* cores para cada mood */
         .mood-happy    { background-color: #FFD700; }
         .mood-sad      { background-color: #6B8EAD; }
         .mood-focus    { background-color: #7B68EE; }
@@ -188,7 +224,7 @@
         .mood-night    { background-color: #8A9BC7; }
         .mood-loving{ background-color: #FF6B35; }
 
-        /* ── Now Playing card ── */
+        /* card que esta tocando a musica */
         #now-playing {
             display: none;
             background: var(--bg-card);
@@ -255,7 +291,7 @@
             min-height: 152px;
         }
 
-        /* ── Barra de controles estilo Spotify ── */
+        /* ── barra de volume e anterior e proxima musica -> usar futuramente */
         .sp-player-bar {
             display: flex;
             align-items: center;
