@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard – Spotify Mood Player</title>
+    <title>Mood Player Spotify</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" href="{{ asset('assets/images/spotify_dark.svg') }}" type="image/svg+xml">
 </head>
 <body>
 
@@ -15,7 +16,7 @@
         <a href="/dashboard" class="sp-brand">
             <img src="/assets/images/logo_spotify.png" alt="Logo" style="width: 40px; height: 40px;" class="logo me-2">
             {{-- <i class="bi bi-music-note-beamed me-1"></i>Mood Player --}}
-            Mood Player
+            Mood Player Caiote
         </a>
 
         <div class="d-flex align-items-center gap-3">
