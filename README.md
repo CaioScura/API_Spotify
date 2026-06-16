@@ -6,6 +6,30 @@ A aplicação permite explorar músicas, playlists e recomendações de acordo c
 
 ---
 
+## 📸 Demonstração
+
+### 🏠 Tela inicial
+
+<p align="center">
+  <img src="./public/assets/images/projeto/tela-inicial.png" width="800">
+</p>
+
+### 🎵 Exploração musical
+
+<p align="center">
+  <img src="./public/assets/images/projeto/tela-inicial-2.png" width="800">
+</p>
+
+### 🎥 Vídeo demonstrativo
+
+> O GitHub não reproduz vídeos `.mp4` diretamente no README.
+
+📎 Faça o upload do vídeo em outra plataforma e adicione o link:
+
+[▶️ Assistir demonstração do Mood Player](LINK_DO_VIDEO)
+
+---
+
 ## 📋 Sobre o projeto
 
 O **Mood Player** é uma aplicação que utiliza a API oficial do Spotify para conectar usuários a playlists e músicas relacionadas ao seu humor atual.
