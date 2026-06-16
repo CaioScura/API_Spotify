@@ -172,7 +172,7 @@ class DashboardController extends Controller
             'focus'     => ['energy' => ['min' => 0.3, 'max' => 0.65], 'speechiness' => ['max' => 0.15]],
             'relaxed'   => ['energy' => ['max' => 0.5], 'valence' => ['min' => 0.4]],
             'night'     => ['energy' => ['max' => 0.4], 'valence' => ['max' => 0.5]],
-            'motivated' => ['energy' => ['min' => 0.7], 'valence' => ['min' => 0.5]],
+            'loving' => ['energy' => ['min' => 0.7], 'valence' => ['min' => 0.5]],
             default     => null,
         };
     }
@@ -185,7 +185,7 @@ class DashboardController extends Controller
             'focus'     => ['ambient', 'classical', 'electronic', 'instrumental', 'lo-fi', 'post-rock'],
             'relaxed'   => ['chill', 'acoustic', 'lo-fi', 'bossa nova', 'jazz', 'soft', 'mellow'],
             'night'     => ['r&b', 'jazz', 'soul', 'trip-hop', 'urban', 'blues', 'synthwave'],
-            'motivated' => ['rock', 'hip-hop', 'metal', 'rap', 'punk', 'trap', 'power', 'hardcore'],
+            'loving'  => ['romance', 'r&b', 'soul', 'love', 'jazz', 'acoustic', 'indie', 'bossa nova'],
             default     => [],
         };
     }

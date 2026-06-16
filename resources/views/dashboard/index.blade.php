@@ -48,11 +48,11 @@
             @php
                 $moods = [
                     ['slug' => 'happy',      'emoji' => '😊', 'name' => 'Animado'],
-                    ['slug' => 'sad',        'emoji' => '😢', 'name' => 'Melancólico'],
-                    ['slug' => 'focus',      'emoji' => '🎯', 'name' => 'Foco'],
-                    ['slug' => 'relaxed',    'emoji' => '😌', 'name' => 'Relaxado'],
+                    ['slug' => 'sad',        'emoji' => '😢', 'name' => 'Triste demais'],
+                    ['slug' => 'focus',      'emoji' => '🎯', 'name' => 'Focado'],
+                    ['slug' => 'relaxed',    'emoji' => '😌', 'name' => 'Sussa'],
                     ['slug' => 'night',      'emoji' => '🌙', 'name' => 'Noturno'],
-                    ['slug' => 'motivated',  'emoji' => '💪', 'name' => 'Motivado'],
+                    ['slug' => 'loving',  'emoji' => '❤️', 'name' => 'Apaixonadinho'],
                 ];
             @endphp
 
