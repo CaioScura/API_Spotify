@@ -8,13 +8,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="icon" href="{{ asset('assets/images/spotify_dark.svg') }}" type="image/svg+xml">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <!-- ── Navbar ── -->
     <nav class="sp-navbar d-flex align-items-center justify-content-between">
         <a href="/dashboard" class="sp-brand">
-            <img src="/assets/images/logo_spotify.png" alt="Logo" style="width: 40px; height: 40px;" class="logo me-2">
+            <img src="/assets/images/logo_spotify.png" alt="Logo" style="width: 32px; height: 32px;" class="logo me-2">
             {{-- <i class="bi bi-music-note-beamed me-1"></i>Mood Player --}}
             Mood Player Caiote
         </a>
@@ -89,9 +94,9 @@
                     style="border-radius: 12px;">
                 </iframe>
                 <div class="mt-2 text-end">
-                    <a id="btn-open-spotify" href="#" target="_blank" rel="noopener" class="btn-sp">
+                    {{-- <a id="btn-open-spotify" href="#" target="_blank" rel="noopener" class="btn-sp">
                         <i class="bi bi-spotify"></i> Abrir no Spotify
-                    </a>
+                    </a> --}}
                 </div>
             </div>
         </div>
@@ -131,7 +136,7 @@
                     document.getElementById('track-info').style.display = 'block';
 
                     embed.src = `https://open.spotify.com/embed/track/${data.track_id}?utm_source=generator&theme=0`;
-                    document.getElementById('btn-open-spotify').href = data.spotify_url ?? '#';
+                    // document.getElementById('btn-open-spotify').href = data.spotify_url ?? '#';
                 })
                 .catch(() => {
                     card.classList.remove('loading');

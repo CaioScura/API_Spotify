@@ -10,15 +10,17 @@
         * { box-sizing: border-box; }
 
         body {
-            background-color: var(--bg-dark);
+            /* background-color: var(--bg-dark); */
+            background: linear-gradient(135deg, #1e1e1e 25%, #121212 75%);
             color: var(--text-main);
             min-height: 100vh;
-            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-family: 'DM Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
         }
 
         /* ── Navbar ── */
         .sp-navbar {
-            background: linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, transparent 100%);
+            /* background: linear-gradient(to bottom, rgba(0,0,0,0.85) 0%, transparent 100%); */
+            background-color: #121212;
             padding: 1rem 2rem;
             position: sticky;
             top: 0;
@@ -26,7 +28,7 @@
         }
 
         .sp-brand {
-            font-size: 1.2rem;
+            font-size: 24px;
             font-weight: 700;
             color: var(--sp-green);
             text-decoration: none;
@@ -59,6 +61,42 @@
             font-size: 0.95rem;
         }
 
+        .btn-entrar-spotify {
+            padding: 20px;
+            border:none;
+            font-size: 18px;
+            color: #fefefe;
+            display: flex;
+            align-items: center;
+            height: 32px;
+            background: linear-gradient(
+                135deg,
+                #8a0fd1 0%,
+                #b45ab4 50%,
+                #ea9697 100%
+            );
+
+            text-decoration: none;
+            border-radius: 10px;
+
+            transition: all 0.3s ease;
+        }
+
+
+        .btn-entrar-spotify:hover {
+            transform: translateY(-3px) scale(1.02);
+
+            background: linear-gradient(
+                135deg,
+                #740cb1 0%,
+                #9f4ba0 50%,
+                #d98688 100%
+            );
+
+
+        }
+
+
         .btn-logout {
             background: transparent;
             border: 1px solid #555;
@@ -78,12 +116,11 @@
         /* ── Main content ── */
         .main-content {
             padding: 2rem 2rem 4rem;
-            max-width: 1100px;
             margin: 0 auto;
         }
 
         .section-title {
-            font-size: 1.9rem;
+            font-size: 32px;
             font-weight: 700;
             margin-bottom: 0.3rem;
         }
@@ -212,7 +249,125 @@
 
         #track-info { display: none; }
 
-        #spotify-embed {
+        #embed-iframe {
             border-radius: 12px;
+            overflow: hidden;
             min-height: 152px;
         }
+
+        /* ── Barra de controles estilo Spotify ── */
+        .sp-player-bar {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: #181818;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 0.65rem 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .sp-player-controls {
+            display: flex;
+            gap: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        .sp-ctrl-btn {
+            background: transparent;
+            border: none;
+            color: #b3b3b3;
+            font-size: 1.4rem;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: color 0.15s, transform 0.1s;
+            padding: 0;
+        }
+
+        .sp-ctrl-btn:hover:not(:disabled) {
+            color: #fff;
+            transform: scale(1.1);
+        }
+
+        .sp-ctrl-btn:disabled {
+            color: #444;
+            cursor: default;
+        }
+
+        .sp-volume {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            flex: 1;
+        }
+
+        .sp-vol-icon-btn {
+            background: transparent;
+            border: none;
+            color: #b3b3b3;
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 0;
+            transition: color 0.15s;
+            flex-shrink: 0;
+        }
+
+        .sp-vol-icon-btn:hover { color: #fff; }
+
+        .sp-volume-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 100%;
+            height: 4px;
+            border-radius: 2px;
+            outline: none;
+            cursor: pointer;
+            background: linear-gradient(
+                to right,
+                #1db954 0%,
+                #1db954 var(--val, 100%),
+                #535353 var(--val, 100%),
+                #535353 100%
+            );
+        }
+
+        .sp-volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #fff;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.15s;
+        }
+
+        .sp-volume:hover .sp-volume-slider::-webkit-slider-thumb { opacity: 1; }
+
+        .sp-volume-slider::-moz-range-thumb {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .sp-open-btn {
+            color: #b3b3b3;
+            font-size: 0.95rem;
+            text-decoration: none;
+            flex-shrink: 0;
+            transition: color 0.15s, transform 0.1s;
+        }
+
+        .sp-open-btn:hover {
+            color: #fff;
+            transform: scale(1.1);
+        }
+        

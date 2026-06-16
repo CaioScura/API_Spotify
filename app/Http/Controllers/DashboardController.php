@@ -172,7 +172,7 @@ class DashboardController extends Controller
             'focus'     => ['energy' => ['min' => 0.3, 'max' => 0.65], 'speechiness' => ['max' => 0.15]],
             'relaxed'   => ['energy' => ['max' => 0.5], 'valence' => ['min' => 0.4]],
             'night'     => ['energy' => ['max' => 0.4], 'valence' => ['max' => 0.5]],
-            'loving' => ['energy' => ['min' => 0.7], 'valence' => ['min' => 0.5]],
+            'loving'    => ['valence' => ['min' => 0.55], 'energy' => ['min' => 0.2, 'max' => 0.7]],
             default     => null,
         };
     }
