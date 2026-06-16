@@ -113,6 +113,15 @@
         </div>
     </div>
 
+    <!-- footer -->
+    <footer class="sp-footer">
+        <span>Feito com a</span>
+        <a href="https://developer.spotify.com/documentation/web-api" target="_blank" rel="noopener">
+            <img src="/assets/images/spotify_dark.svg" alt="Spotify" class="sp-footer-logo">
+            Spotify Web API
+        </a>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         let activeCard = null;

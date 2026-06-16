@@ -121,6 +121,7 @@
 
         /* conteudo principal */
         .main-content {
+            min-height: 83vh;
             padding: 2rem 2rem 4rem;
             margin: 0 auto;
         }
@@ -223,6 +224,36 @@
         .mood-relaxed  { background-color: #5EC4A0; }
         .mood-night    { background-color: #8A9BC7; }
         .mood-loving{ background-color: #FF6B35; }
+
+        /* footer */
+        .sp-footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1.25rem 2rem;
+            border-top: 1px solid #2a2a2a;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        .sp-footer a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            color: var(--sp-green);
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        .sp-footer a:hover { opacity: 0.75; }
+
+        .sp-footer-logo {
+            width: 16px;
+            height: 16px;
+            filter: invert(58%) sepia(97%) saturate(380%) hue-rotate(90deg) brightness(95%);
+        }
 
         /* card que esta tocando a musica */
         #now-playing {
