@@ -52,11 +52,11 @@
         <div class="row g-3">
             @php
                 $moods = [
-                    ['slug' => 'happy',      'emoji' => '😊', 'name' => 'Animado'],
-                    ['slug' => 'sad',        'emoji' => '😢', 'name' => 'Triste demais'],
-                    ['slug' => 'focus',      'emoji' => '🎯', 'name' => 'Focado'],
+                    ['slug' => 'happy',      'emoji' => '😊', 'name' => 'Animação'],
+                    ['slug' => 'sad',        'emoji' => '😢', 'name' => 'Depressaum'],
+                    ['slug' => 'focus',      'emoji' => '🦭', 'name' => 'Focado'],
                     ['slug' => 'relaxed',    'emoji' => '😌', 'name' => 'Sussa'],
-                    ['slug' => 'night',      'emoji' => '🌙', 'name' => 'Noturno'],
+                    ['slug' => 'night',      'emoji' => '🌙', 'name' => 'Noitezinha'],
                     ['slug' => 'loving',  'emoji' => '❤️', 'name' => 'Apaixonadinho'],
                 ];
             @endphp

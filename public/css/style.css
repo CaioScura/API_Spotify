@@ -181,12 +181,12 @@
         }
 
         /* top accent bars per mood */
-        .mood-happy    { border-top: 3px solid #FFD700; }
-        .mood-sad      { border-top: 3px solid #6B8EAD; }
-        .mood-focus    { border-top: 3px solid #7B68EE; }
-        .mood-relaxed  { border-top: 3px solid #5EC4A0; }
-        .mood-night    { border-top: 3px solid #8A9BC7; }
-        .mood-loving{ border-top: 3px solid #FF6B35; }
+        .mood-happy    { background-color: #FFD700; }
+        .mood-sad      { background-color: #6B8EAD; }
+        .mood-focus    { background-color: #7B68EE; }
+        .mood-relaxed  { background-color: #5EC4A0; }
+        .mood-night    { background-color: #8A9BC7; }
+        .mood-loving{ background-color: #FF6B35; }
 
         /* ── Now Playing card ── */
         #now-playing {
