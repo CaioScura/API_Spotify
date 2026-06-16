@@ -13,7 +13,9 @@
     <!-- ── Navbar ── -->
     <nav class="sp-navbar d-flex align-items-center justify-content-between">
         <a href="/dashboard" class="sp-brand">
-            <i class="bi bi-music-note-beamed me-1"></i>Mood Player
+            <img src="/assets/images/logo_spotify.png" alt="Logo" style="width: 40px; height: 40px;" class="logo me-2">
+            {{-- <i class="bi bi-music-note-beamed me-1"></i>Mood Player --}}
+            Mood Player
         </a>
 
         <div class="d-flex align-items-center gap-3">
@@ -35,29 +37,30 @@
 
     <!-- ── Main ── -->
     <div class="main-content">
-        <h1 class="section-title">Como você está se sentindo?</h1>
-        <p class="section-sub">Selecione um mood e tocaremos uma música das suas curtidas que combina.</p>
+        <div>
+            <h1 class="section-title">Como você está se sentindo?</h1>
+            <div class="section-sub">Selecione um mood e tocaremos uma música das suas curtidas que combina.</div>
+        </div>
 
         <!-- Mood grid -->
         <div class="row g-3">
             @php
                 $moods = [
-                    ['slug' => 'happy',      'emoji' => '😊', 'name' => 'Animado',      'desc' => 'Energia positiva e boa vibe'],
-                    ['slug' => 'sad',        'emoji' => '😢', 'name' => 'Melancólico',  'desc' => 'Para os momentos mais calmos'],
-                    ['slug' => 'focus',      'emoji' => '🎯', 'name' => 'Foco',         'desc' => 'Concentração e produtividade'],
-                    ['slug' => 'relaxed',    'emoji' => '😌', 'name' => 'Relaxado',     'desc' => 'Leveza e tranquilidade'],
-                    ['slug' => 'night',      'emoji' => '🌙', 'name' => 'Noturno',      'desc' => 'Para a madrugada'],
-                    ['slug' => 'motivated',  'emoji' => '💪', 'name' => 'Motivado',     'desc' => 'Hora de agir!'],
+                    ['slug' => 'happy',      'emoji' => '😊', 'name' => 'Animado'],
+                    ['slug' => 'sad',        'emoji' => '😢', 'name' => 'Melancólico'],
+                    ['slug' => 'focus',      'emoji' => '🎯', 'name' => 'Foco'],
+                    ['slug' => 'relaxed',    'emoji' => '😌', 'name' => 'Relaxado'],
+                    ['slug' => 'night',      'emoji' => '🌙', 'name' => 'Noturno'],
+                    ['slug' => 'motivated',  'emoji' => '💪', 'name' => 'Motivado'],
                 ];
             @endphp
 
             @foreach($moods as $mood)
-            <div class="col-6 col-md-4 col-lg-2">
+            <div class="col-6 col-md-4 col-lg-4">
                 <div class="mood-card mood-{{ $mood['slug'] }}"
                      onclick="selectMood(this, '{{ $mood['slug'] }}')">
                     <span class="mood-emoji">{{ $mood['emoji'] }}</span>
                     <div class="mood-name">{{ $mood['name'] }}</div>
-                    <div class="mood-desc">{{ $mood['desc'] }}</div>
                 </div>
             </div>
             @endforeach
@@ -65,7 +68,7 @@
 
         <!-- Now Playing -->
         <div id="now-playing">
-            <div class="now-playing-label"><i class="bi bi-vinyl me-1"></i>Tocando agora</div>
+            {{-- <div class="now-playing-label"><i class="bi bi-vinyl me-1"></i>Tocando agora</div> --}}
 
             <div id="loading-track">
                 <div class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></div>

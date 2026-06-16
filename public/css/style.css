@@ -155,7 +155,7 @@
             display: none;
             background: var(--bg-card);
             border-radius: 16px;
-            padding: 1.75rem;
+            padding: 1rem;
             margin-top: 2.5rem;
             border: 1px solid #2c2c2c;
             animation: fadeIn 0.3s ease;
