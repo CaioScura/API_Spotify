@@ -8,6 +8,10 @@ A aplicação permite explorar músicas, playlists e recomendações de acordo c
 
 ## 📸 Demonstração
 
+<p align="center">
+  <img src="./public/assets/images/projeto/logo.png" width="800">
+</p>
+
 ### 🏠 Tela inicial
 
 <p align="center">
@@ -20,13 +24,6 @@ A aplicação permite explorar músicas, playlists e recomendações de acordo c
   <img src="./public/assets/images/projeto/tela-inicial-2.png" width="800">
 </p>
 
-### 🎥 Vídeo demonstrativo
-
-> O GitHub não reproduz vídeos `.mp4` diretamente no README.
-
-📎 Faça o upload do vídeo em outra plataforma e adicione o link:
-
-[▶️ Assistir demonstração do Mood Player](LINK_DO_VIDEO)
 
 ---
 
